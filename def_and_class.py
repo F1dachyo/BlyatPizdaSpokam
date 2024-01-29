@@ -131,6 +131,21 @@ class Enemy(pygame.sprite.Sprite):
         elif self.tup == 4:
             self.rect.x = random.randint(0, width)
             self.rect.y = random.randint(-2000, 0)
+        elif self.tup == 5:
+            qwe = random.randint(1, 5)
+            self.tup = qwe
+            if qwe == 1:
+                self.rect.x = random.randint(-2000, 0)
+                self.rect.y = random.randint(0, height)
+            elif qwe == 2:
+                self.rect.x = random.randint(0, width)
+                self.rect.y = random.randint(height, height + 2000)
+            elif qwe == 3:
+                self.rect.x = random.randint(width, width + 2000)
+                self.rect.y = random.randint(0, height)
+            elif qwe == 4:
+                self.rect.x = random.randint(0, width)
+                self.rect.y = random.randint(-2000, 0)
         self.distance = ((self.rect.x - player_pos[0]) ** 2 + (self.rect.y - player_pos[0]) ** 2) ** 0.5
 
     def update(self, player_pos, activ_word):
@@ -190,6 +205,11 @@ def generate(n, tup):
             Enemy((960, 540), let[i], 3,
                   f"enemy/{let[i]}/tile000.png", 30, 15, tup, new_enemy)
     elif tup == 4:
+        let = random.choices(letters, k=n)
+        for i in range(n):
+            Enemy((960, 540), let[i], 3,
+                  f"enemy/{let[i]}/tile000.png", 30, 15, tup, new_enemy)
+    elif tup == 5:
         let = random.choices(letters, k=n)
         for i in range(n):
             Enemy((960, 540), let[i], 3,

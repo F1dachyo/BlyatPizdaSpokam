@@ -19,8 +19,8 @@ pygame.init()
 screen.fill(pygame.Color("white"))
 font = pygame.font.Font(None, 20)
 
-tup = 2
-all_sprites.add(generate(50, tup))
+tup = 5
+all_sprites.add(generate(150, tup))
 keyboard = Keyboard()
 data = []
 activ = True
