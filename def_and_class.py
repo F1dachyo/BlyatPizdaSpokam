@@ -104,7 +104,7 @@ def load_image(name, colorkey=None):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, player_pos, name, speed, image_name, score, money, tup, *group):
         super().__init__(*group)
-        self.image = pygame.transform.scale(load_image(image_name), (57, 63))
+        self.image = pygame.transform.scale(load_image(image_name), (38, 42))
         self.speed = speed
         self.name = name
         self.score = score

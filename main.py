@@ -1,11 +1,7 @@
-from params import letters, size, width, height
-from def_and_class import Keyboard, Enemy, str_key, change_score, change_money, load_image, generate
+from params import size
+from def_and_class import Keyboard, generate
 
-from pynput.keyboard import Listener
 import pygame
-import os
-import sys
-import random
 import sqlite3
 
 con = sqlite3.connect('data/game.sqlite3')
@@ -14,13 +10,8 @@ cur = con.cursor()
 screen = pygame.display.set_mode(size)
 clock = pygame.time.Clock()
 all_sprites = pygame.sprite.Group()
-sprite = pygame.sprite.Sprite()
-pygame.init()
-screen.fill(pygame.Color("white"))
-font = pygame.font.Font(None, 20)
 
-tup = 5
-all_sprites.add(generate(150, tup))
+all_sprites.add(generate(150, 5))
 keyboard = Keyboard()
 data = []
 activ = True
